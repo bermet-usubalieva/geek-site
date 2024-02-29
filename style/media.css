@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 368px);
+    padding-left: calc(50% - 368px);
+  }
+  .header {
+    background-color: red;
+  }
+}/*# sourceMappingURL=media.css.map */
