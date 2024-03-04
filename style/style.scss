@@ -1046,6 +1046,7 @@ summary::-webkit-details-marker {
         display: flex;
         flex-direction: column;
         gap: 40px;
+        align-items: center;
     }
 
     &__card_up {
@@ -1141,6 +1142,7 @@ summary::-webkit-details-marker {
         display: flex;
         justify-content: space-between;
         margin-top: 41px;
+        gap: 191px;
     }
 
     &__card-button-clear {
@@ -1382,7 +1384,7 @@ summary::-webkit-details-marker {
     &__loyal-title {
         font-weight: 400;
         font-size: 24px;
-        list-style: 28px;
+        line-height: 28px;
         color: #000000;
         margin-bottom: 22px;
     }
@@ -1390,7 +1392,7 @@ summary::-webkit-details-marker {
     &__loyal-heading {
         font-weight: 400;
         font-size: 24px;
-        list-style: 28px;
+        line-height: 28px;
         color: #000000;
         margin-bottom: 22px;
     }
@@ -1404,7 +1406,7 @@ summary::-webkit-details-marker {
     &__loyal-text {
         font-weight: 400;
         font-size: 24px;
-        list-style: 28px;
+        line-height: 28px;
         color: #000000;
         margin-bottom: 16px;
     }
