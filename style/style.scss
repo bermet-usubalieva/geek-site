@@ -632,11 +632,17 @@ ul {
     }
 }
 
-.options {
-    position: absolute;
+.options-wrap {
+    position: relative;
+    max-width: 1140px;
     top: -81px;
-    z-index: 2;
-    display: flex;
+
+    .options {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: baseline;
+    }
 }
 
 .filter {
@@ -644,6 +650,10 @@ ul {
     padding: 16px;
     margin-right: 30px;
     cursor: pointer;
+
+    &__sort-wrap {
+        display: flex;
+    }
 }
 
 .filter__heading,
@@ -663,6 +673,7 @@ summary {
         fill: black;
     }
 }
+
 
 .filter__heading::-webkit-details-marker,
 .category__heading::-webkit-details-marker,
