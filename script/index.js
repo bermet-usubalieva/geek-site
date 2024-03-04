@@ -28,6 +28,6 @@ next.addEventListener('click', nextSlider)
 prev.addEventListener('click', prevSlider)
 
 
-// setInterval(() => {
-//     nextSlider()
-// }, 3000)
+setInterval(() => {
+    nextSlider()
+}, 3000)
