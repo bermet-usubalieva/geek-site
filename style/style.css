@@ -1,5 +1,8 @@
 body {
   font-family: "Lato", "sans-serif";
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -32,13 +35,18 @@ ul {
   padding-right: calc(50% - 570px);
 }
 
+.top {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
 .header {
   min-height: 75px;
   background: #222222;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 .header__left {
   display: flex;
@@ -59,7 +67,7 @@ ul {
   left: -9999999px;
 }
 .header__checkbox:checked ~ .mobile-menu {
-  opacity: 0;
+  right: 0;
 }
 
 .mobile-menu {
@@ -70,10 +78,18 @@ ul {
   padding: 32px;
   position: absolute;
   top: 75px;
-  right: 0px;
-  opacity: 1;
+  right: -232px;
   transition: 0.4s;
   z-index: 1;
+}
+.mobile-menu__link-site {
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e8e8e8;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  display: none;
 }
 .mobile-menu__heading {
   font-style: normal;
@@ -1303,6 +1319,7 @@ summary::-webkit-details-marker {
     flex-direction: column;
     padding-left: 16px;
     padding-right: 16px;
+    align-items: center;
   }
   .order__card-button {
     justify-content: center;
@@ -1324,11 +1341,7 @@ summary::-webkit-details-marker {
 }
 @media (max-width: 1024px) {
   .header__checkbox:checked ~ .mobile-menu {
-    opacity: 1;
     z-index: 3;
-  }
-  .mobile-menu {
-    opacity: 0;
   }
   .promo__img {
     width: 50%;
@@ -1446,6 +1459,21 @@ summary::-webkit-details-marker {
   }
 }
 @media (max-width: 760px) {
+  .promo {
+    padding: 148px 0px 148px 0px;
+    justify-content: center;
+  }
+  .promo__title {
+    font-size: 38px;
+    line-height: 45px;
+  }
+  .promo__heading, .promo__span {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .promo__img {
+    display: none;
+  }
   .order__form {
     flex-direction: column;
   }
@@ -1463,22 +1491,9 @@ summary::-webkit-details-marker {
     width: 100%;
   }
 }
-@media (max-width: 720px) {
-  .promo__img {
-    width: 45%;
-  }
-}
 @media (max-width: 670px) {
   .sale__item_big {
     min-height: 90px;
-  }
-  .promo__title {
-    font-size: 38px;
-    line-height: 45px;
-  }
-  .promo__heading, .promo__span {
-    font-size: 20px;
-    line-height: 24px;
   }
   .item__card {
     padding-left: 24px;
@@ -1518,6 +1533,22 @@ summary::-webkit-details-marker {
   }
 }
 @media (max-width: 560px) {
+  .header__right-registr {
+    display: none;
+  }
+  .header__right-cart {
+    display: none;
+  }
+  .header__checkbox:checked ~ .mobile-menu {
+    right: 0;
+  }
+  .mobile-menu {
+    width: 100%;
+    right: -100%;
+  }
+  .mobile-menu__link-site {
+    display: flex;
+  }
   .carousel__slider-wrapper {
     width: 440px;
   }
@@ -1525,7 +1556,7 @@ summary::-webkit-details-marker {
     width: 90%;
   }
   .order__card_up-img {
-    width: 150px;
+    width: 180px;
   }
   .order__card-button-clear, .order__card-button-continue {
     width: 175px;
@@ -1541,21 +1572,17 @@ summary::-webkit-details-marker {
     flex-direction: column;
     gap: 32px;
   }
-  .promo {
-    padding: 148px 0px 148px 0px;
-    justify-content: center;
-  }
-  .promo__img {
-    display: none;
-  }
   .sale {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 64px;
+    gap: 32px;
   }
   .sale__item_big-img {
     height: 111px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .sale__item_big {
     max-width: 360px;
@@ -1566,6 +1593,23 @@ summary::-webkit-details-marker {
     padding-top: 43px;
     gap: 40px;
     padding-bottom: 9px;
+  }
+}
+@media (max-width: 480px) {
+  .order__card_up {
+    gap: 17px;
+    width: 360px;
+    height: 188px;
+  }
+  .order__card_up-img {
+    width: 144px;
+    height: 188px;
+  }
+  .order__card_up-svg {
+    margin-right: 12px;
+  }
+  .order__card-button {
+    gap: 9px;
   }
 }
 @media (max-width: 440px) {
@@ -1586,27 +1630,8 @@ summary::-webkit-details-marker {
   .item .select__trend-wrap {
     width: 75px;
   }
-  .order__card_up {
-    gap: 17px;
-    width: 360px;
-  }
-  .order__card_up-img {
-    width: 143px;
-  }
-  .order__card_up-svg {
-    margin-right: 12px;
-  }
-  .order__card-button {
-    gap: 9px;
-  }
 }
 @media (max-width: 400px) {
-  .header__right-registr {
-    display: none;
-  }
-  .header__right-cart {
-    display: none;
-  }
   .form__input {
     width: 245px;
   }
